@@ -1,5 +1,7 @@
 import type { OxfmtConfig } from 'oxfmt'
 
+const DEFAULT_IGNORES = ['**/pnpm-lock.yaml', '**/CHANGELOG*.md', '**/*.min.*', '**/__snapshots__']
+
 /**
  * Shared oxfmt config, antfu-flavored: no semicolons, single quotes, 2-space indent.
  * Use in `oxfmt.config.ts`:
@@ -18,8 +20,9 @@ export function fmt(options: OxfmtConfig = {}): OxfmtConfig {
     trailingComma: 'all',
     experimentalSortImports: {},
     experimentalSortPackageJson: true,
-    ignorePatterns: ['**/pnpm-lock.yaml', '**/CHANGELOG*.md', '**/*.min.*', '**/__snapshots__'],
     ...options,
+    ignorePatterns: [...DEFAULT_IGNORES, ...(options.ignorePatterns ?? [])],
+    overrides: options.overrides ?? [],
   }
 }
 
