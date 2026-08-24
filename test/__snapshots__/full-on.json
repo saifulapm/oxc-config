@@ -1,0 +1,340 @@
+{
+  "ignorePatterns": [
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/output",
+    "**/coverage",
+    "**/temp",
+    "**/.temp",
+    "**/tmp",
+    "**/.tmp",
+    "**/.history",
+    "**/.cache",
+    "**/.output",
+    "**/.next",
+    "**/.nuxt",
+    "**/.svelte-kit",
+    "**/.astro",
+    "**/.vercel",
+    "**/.wrangler",
+    "**/.shopify",
+    "**/.react-router",
+    "**/.yarn",
+    "**/.vite-inspect",
+    "**/vite.config.*.timestamp-*",
+    "**/*.min.*",
+    "**/__snapshots__",
+    "**/auto-imports.d.ts",
+    "**/components.d.ts",
+    "**/worker-configuration.d.ts"
+  ],
+  "plugins": [
+    "eslint",
+    "oxc",
+    "unicorn",
+    "import",
+    "promise",
+    "node",
+    "jsdoc",
+    "typescript",
+    "react",
+    "react-perf",
+    "jsx-a11y",
+    "vue",
+    "vitest"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn"
+  },
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {},
+  "options": {
+    "reportUnusedDisableDirectives": "warn",
+    "typeAware": true
+  },
+  "rules": {
+    "eqeqeq": ["error", "smart"],
+    "no-alert": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-new-func": "error",
+    "no-var": "error",
+    "no-array-constructor": "error",
+    "no-object-constructor": "error",
+    "no-lonely-if": "error",
+    "no-multi-assign": "error",
+    "no-unneeded-ternary": "error",
+    "no-useless-computed-key": "error",
+    "no-useless-rename": "error",
+    "no-else-return": [
+      "error",
+      {
+        "allowElseIf": false
+      }
+    ],
+    "no-throw-literal": "error",
+    "no-undef": "error",
+    "no-unexpected-multiline": "error",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTaggedTemplates": true,
+        "allowTernary": true
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrors": "none",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "classes": false,
+        "functions": false,
+        "variables": true
+      }
+    ],
+    "object-shorthand": ["error", "always"],
+    "one-var": ["error", "never"],
+    "prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": false,
+        "allowUnboundThis": true
+      }
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all"
+      }
+    ],
+    "prefer-exponentiation-operator": "error",
+    "prefer-object-spread": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "yoda": ["error", "never"],
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-self-import": "error",
+    "promise/no-callback-in-promise": "warn",
+    "promise/no-new-statics": "error",
+    "promise/no-return-in-finally": "error",
+    "node/no-exports-assign": "error",
+    "node/no-new-require": "error",
+    "unicorn/error-message": "error",
+    "unicorn/no-instanceof-builtins": "error",
+    "unicorn/no-new-array": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/prefer-string-starts-ends-with": "error",
+    "unicorn/prefer-type-error": "error",
+    "unicorn/throw-new-error": "error",
+    "unicorn/no-array-for-each": "warn",
+    "unicorn/prefer-array-flat-map": "error",
+    "unicorn/prefer-optional-catch-binding": "error",
+    "typescript/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description"
+      }
+    ],
+    "typescript/consistent-type-definitions": ["error", "interface"],
+    "typescript/consistent-type-imports": [
+      "error",
+      {
+        "disallowTypeAnnotations": false,
+        "fixStyle": "separate-type-imports",
+        "prefer": "type-imports"
+      }
+    ],
+    "typescript/no-dynamic-delete": "error",
+    "typescript/no-empty-object-type": [
+      "error",
+      {
+        "allowInterfaces": "always"
+      }
+    ],
+    "typescript/no-explicit-any": "error",
+    "typescript/no-extraneous-class": "error",
+    "typescript/no-import-type-side-effects": "error",
+    "typescript/no-invalid-void-type": "error",
+    "typescript/no-non-null-assertion": "warn",
+    "typescript/no-require-imports": "error",
+    "typescript/no-unsafe-function-type": "error",
+    "typescript/no-wrapper-object-types": "error",
+    "typescript/prefer-as-const": "error",
+    "typescript/prefer-literal-enum-member": "error",
+    "typescript/unified-signatures": "error",
+    "typescript/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowIIFEs": true
+      }
+    ],
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/jsx-boolean-value": ["error", "never"],
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-no-useless-fragment": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "react/no-array-index-key": "warn",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-string-refs": "error",
+    "react/self-closing-comp": "error",
+    "react/void-dom-elements-no-children": "error",
+    "anti-slop/no-chained-type-assertions": "error",
+    "anti-slop/no-conditional-empty-object-spread": "error",
+    "anti-slop/no-known-value-widening": "error",
+    "anti-slop/no-module-mocking": "error",
+    "anti-slop/no-object-parameters": "error",
+    "anti-slop/no-reflect-apply": "error",
+    "anti-slop/no-reflect-get": "error",
+    "anti-slop/no-runtime-typeof": "error",
+    "anti-slop/no-shape-in-symbol-names": "error",
+    "anti-slop/no-unknown-parameters": "error",
+    "anti-slop/no-unknown-returns": "error",
+    "anti-slop/no-unknown-type-aliases": "error",
+    "anti-slop/no-unsafe-dictionary-type": "error",
+    "anti-slop/no-widen-then-assert": "error",
+    "anti-slop/require-safety-comment-for-type-assertion": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.d.{ts,mts,cts}"],
+      "rules": {
+        "no-unused-vars": "off",
+        "import/no-duplicates": "off",
+        "typescript/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["**/*.vue"],
+      "env": {
+        "vue": true
+      },
+      "rules": {
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "import/first": "off"
+      }
+    },
+    {
+      "files": ["**/*.svelte"],
+      "env": {
+        "svelte": true
+      },
+      "rules": {
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "prefer-const": "off"
+      }
+    },
+    {
+      "files": ["**/*.astro"],
+      "env": {
+        "astro": true
+      },
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    },
+    {
+      "files": [
+        "**/__tests__/**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
+        "**/*.spec.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
+        "**/*.test.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
+        "**/*.bench.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"
+      ],
+      "env": {
+        "vitest": true
+      },
+      "rules": {
+        "vitest/no-identical-title": "error",
+        "vitest/no-import-node-test": "error",
+        "vitest/no-focused-tests": "error",
+        "vitest/prefer-hooks-in-order": "error",
+        "vitest/prefer-lowercase-title": "error",
+        "no-unused-expressions": "off",
+        "no-console": "off",
+        "typescript/no-explicit-any": "off",
+        "typescript/no-non-null-assertion": "off"
+      }
+    },
+    {
+      "files": [
+        "**/__tests__/**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
+        "**/*.spec.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
+        "**/*.test.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
+        "**/*.bench.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"
+      ],
+      "rules": {
+        "anti-slop/no-module-mocking": "off",
+        "anti-slop/no-unknown-parameters": "off",
+        "anti-slop/no-object-parameters": "off",
+        "anti-slop/require-safety-comment-for-type-assertion": "off"
+      }
+    },
+    {
+      "files": ["**/scripts/**", "**/cli/**", "**/bin/**", "**/bin.*"],
+      "rules": {
+        "no-console": "off",
+        "typescript/explicit-function-return-type": "off"
+      }
+    },
+    {
+      "files": ["**/*.config.*", "**/*.config.*.*", "**/.*rc.{js,mjs,cjs,ts}"],
+      "rules": {
+        "no-console": "off",
+        "import/no-default-export": "off",
+        "typescript/explicit-function-return-type": "off"
+      }
+    },
+    {
+      "files": ["**/*.{js,mjs,cjs}"],
+      "rules": {
+        "typescript/no-require-imports": "off"
+      }
+    }
+  ],
+  "jsPlugins": [
+    {
+      "name": "anti-slop",
+      "specifier": "@saifulapm/oxc-config/anti-slop"
+    }
+  ]
+}

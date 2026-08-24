@@ -1,0 +1,61 @@
+{
+  "name": "@saifulapm/oxc-config",
+  "version": "0.1.0",
+  "description": "Saiful's shareable Oxlint + Oxfmt config — antfu-style factory with bundled anti-slop rules",
+  "keywords": [
+    "anti-slop",
+    "lint-config",
+    "oxc",
+    "oxfmt",
+    "oxlint"
+  ],
+  "license": "MIT",
+  "author": "Saiful Islam <accounts@saifulapm.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saifulapm/oxc-config.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./fmt": "./dist/fmt.mjs",
+    "./anti-slop": "./dist/anti-slop.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint": "oxlint --disable-nested-config",
+    "fmt": "oxfmt",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:rules": "bash scripts/test-rules.sh"
+  },
+  "dependencies": {
+    "@oxlint/plugins": "^1.79.0",
+    "local-pkg": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.13",
+    "oxfmt": "^0.64.0",
+    "oxlint": "^1.79.0",
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  },
+  "peerDependencies": {
+    "oxfmt": ">=0.64.0",
+    "oxlint": ">=1.79.0"
+  },
+  "peerDependenciesMeta": {
+    "oxfmt": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
