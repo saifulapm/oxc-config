@@ -10,7 +10,21 @@ export interface OptionsOverrides {
   overrides?: Rules
 }
 
+export interface OptionsReact extends OptionsOverrides {
+  /**
+   * Enable jsx-a11y accessibility rules.
+   * @default false
+   */
+  a11y?: boolean
+}
+
 export interface OptionsAntiSlop extends OptionsOverrides {
+  /**
+   * Run all anti-slop rules at this severity. Use 'warn' while ratcheting legacy code.
+   * @default 'error'
+   */
+  severity?: 'error' | 'warn'
+
   /**
    * Module specifier oxlint should load the plugin from.
    * Defaults to the published package export; override for local development.
@@ -26,10 +40,10 @@ export interface OptionsConfig {
   typescript?: boolean | OptionsOverrides
 
   /**
-   * React rules (includes react-hooks, react-perf and jsx-a11y).
+   * React rules (includes react-hooks; jsx-a11y via the `a11y` sub-option).
    * Auto-detected from the `react` package by default.
    */
-  react?: boolean | OptionsOverrides
+  react?: boolean | OptionsReact
 
   /**
    * Vue rules + globals. Only `<script>` blocks are linted (oxc limitation).

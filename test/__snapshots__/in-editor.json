@@ -29,7 +29,17 @@
     "**/components.d.ts",
     "**/worker-configuration.d.ts"
   ],
-  "plugins": ["eslint", "oxc", "unicorn", "import", "promise", "node", "jsdoc", "typescript", "vitest"],
+  "plugins": [
+    "eslint",
+    "oxc",
+    "unicorn",
+    "import",
+    "promise",
+    "node",
+    "jsdoc",
+    "typescript",
+    "vitest"
+  ],
   "categories": {
     "correctness": "error",
     "suspicious": "warn",
@@ -45,12 +55,22 @@
     "reportUnusedDisableDirectives": "warn"
   },
   "rules": {
-    "eqeqeq": ["error", "smart"],
+    "no-await-in-loop": "off",
+    "no-underscore-dangle": "off",
+    "unicorn/no-array-sort": "off",
+    "jsdoc/require-yields": "off",
+    "eqeqeq": [
+      "error",
+      "smart"
+    ],
     "no-alert": "error",
     "no-console": [
       "error",
       {
-        "allow": ["warn", "error"]
+        "allow": [
+          "warn",
+          "error"
+        ]
       }
     ],
     "no-eval": "error",
@@ -99,8 +119,14 @@
         "variables": true
       }
     ],
-    "object-shorthand": ["error", "always"],
-    "one-var": ["error", "never"],
+    "object-shorthand": [
+      "error",
+      "always"
+    ],
+    "one-var": [
+      "error",
+      "never"
+    ],
     "prefer-arrow-callback": [
       "error",
       {
@@ -119,7 +145,10 @@
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "yoda": ["error", "never"],
+    "yoda": [
+      "error",
+      "never"
+    ],
     "import/first": "error",
     "import/no-duplicates": "error",
     "import/no-mutable-exports": "error",
@@ -146,7 +175,10 @@
         "ts-expect-error": "allow-with-description"
       }
     ],
-    "typescript/consistent-type-definitions": ["error", "interface"],
+    "typescript/consistent-type-definitions": [
+      "error",
+      "interface"
+    ],
     "typescript/consistent-type-imports": [
       "error",
       {
@@ -173,6 +205,16 @@
     "typescript/prefer-as-const": "error",
     "typescript/prefer-literal-enum-member": "error",
     "typescript/unified-signatures": "error",
+    "vitest/valid-expect": [
+      "error",
+      {
+        "maxArgs": 2
+      }
+    ],
+    "vitest/require-mock-type-parameters": "off",
+    "vitest/require-to-throw-message": "off",
+    "vitest/no-conditional-expect": "warn",
+    "vitest/expect-expect": "warn",
     "anti-slop/no-chained-type-assertions": "error",
     "anti-slop/no-conditional-empty-object-spread": "error",
     "anti-slop/no-known-value-widening": "error",
@@ -191,11 +233,14 @@
   },
   "overrides": [
     {
-      "files": ["**/*.d.{ts,mts,cts}"],
+      "files": [
+        "**/*.d.{ts,mts,cts}"
+      ],
       "rules": {
         "no-unused-vars": "off",
         "import/no-duplicates": "off",
-        "typescript/no-explicit-any": "off"
+        "typescript/no-explicit-any": "off",
+        "typescript/no-useless-empty-export": "off"
       }
     },
     {
@@ -225,24 +270,40 @@
         "**/__tests__/**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
         "**/*.spec.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
         "**/*.test.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
-        "**/*.bench.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"
+        "**/*.bench.{js,mjs,cjs,jsx,ts,mts,cts,tsx}",
+        "**/tests/**",
+        "**/test/**",
+        "**/*.setup.*"
       ],
       "rules": {
         "anti-slop/no-module-mocking": "off",
         "anti-slop/no-unknown-parameters": "off",
         "anti-slop/no-object-parameters": "off",
-        "anti-slop/require-safety-comment-for-type-assertion": "off"
+        "anti-slop/require-safety-comment-for-type-assertion": "off",
+        "anti-slop/no-chained-type-assertions": "off",
+        "anti-slop/no-known-value-widening": "off",
+        "anti-slop/no-runtime-typeof": "off",
+        "anti-slop/no-unsafe-dictionary-type": "off"
       }
     },
     {
-      "files": ["**/scripts/**", "**/cli/**", "**/bin/**", "**/bin.*"],
+      "files": [
+        "**/scripts/**",
+        "**/cli/**",
+        "**/bin/**",
+        "**/bin.*"
+      ],
       "rules": {
         "no-console": "off",
         "typescript/explicit-function-return-type": "off"
       }
     },
     {
-      "files": ["**/*.config.*", "**/*.config.*.*", "**/.*rc.{js,mjs,cjs,ts}"],
+      "files": [
+        "**/*.config.*",
+        "**/*.config.*.*",
+        "**/.*rc.{js,mjs,cjs,ts}"
+      ],
       "rules": {
         "no-console": "off",
         "import/no-default-export": "off",
@@ -250,7 +311,9 @@
       }
     },
     {
-      "files": ["**/*.{js,mjs,cjs}"],
+      "files": [
+        "**/*.{js,mjs,cjs}"
+      ],
       "rules": {
         "typescript/no-require-imports": "off"
       }

@@ -13,6 +13,14 @@ export function test(options: TestOptions = {}): Partial<OxlintConfig> {
 
   return {
     plugins: ['vitest'],
+    rules: {
+      // vitest supports expect(value, message)
+      'vitest/valid-expect': ['error', { maxArgs: 2 }],
+      'vitest/require-mock-type-parameters': 'off',
+      'vitest/require-to-throw-message': 'off',
+      'vitest/no-conditional-expect': 'warn',
+      'vitest/expect-expect': 'warn',
+    },
     overrides: [
       {
         files: GLOB_TESTS,

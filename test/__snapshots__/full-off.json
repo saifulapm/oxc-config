@@ -29,7 +29,15 @@
     "**/components.d.ts",
     "**/worker-configuration.d.ts"
   ],
-  "plugins": ["eslint", "oxc", "unicorn", "import", "promise", "node", "jsdoc"],
+  "plugins": [
+    "eslint",
+    "oxc",
+    "unicorn",
+    "import",
+    "promise",
+    "node",
+    "jsdoc"
+  ],
   "categories": {
     "correctness": "error",
     "suspicious": "warn",
@@ -45,12 +53,22 @@
     "reportUnusedDisableDirectives": "warn"
   },
   "rules": {
-    "eqeqeq": ["error", "smart"],
+    "no-await-in-loop": "off",
+    "no-underscore-dangle": "off",
+    "unicorn/no-array-sort": "off",
+    "jsdoc/require-yields": "off",
+    "eqeqeq": [
+      "error",
+      "smart"
+    ],
     "no-alert": "error",
     "no-console": [
       "error",
       {
-        "allow": ["warn", "error"]
+        "allow": [
+          "warn",
+          "error"
+        ]
       }
     ],
     "no-eval": "error",
@@ -99,8 +117,14 @@
         "variables": true
       }
     ],
-    "object-shorthand": ["error", "always"],
-    "one-var": ["error", "never"],
+    "object-shorthand": [
+      "error",
+      "always"
+    ],
+    "one-var": [
+      "error",
+      "never"
+    ],
     "prefer-arrow-callback": [
       "error",
       {
@@ -119,7 +143,10 @@
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "yoda": ["error", "never"],
+    "yoda": [
+      "error",
+      "never"
+    ],
     "import/first": "error",
     "import/no-duplicates": "error",
     "import/no-mutable-exports": "error",
@@ -143,14 +170,23 @@
   },
   "overrides": [
     {
-      "files": ["**/scripts/**", "**/cli/**", "**/bin/**", "**/bin.*"],
+      "files": [
+        "**/scripts/**",
+        "**/cli/**",
+        "**/bin/**",
+        "**/bin.*"
+      ],
       "rules": {
         "no-console": "off",
         "typescript/explicit-function-return-type": "off"
       }
     },
     {
-      "files": ["**/*.config.*", "**/*.config.*.*", "**/.*rc.{js,mjs,cjs,ts}"],
+      "files": [
+        "**/*.config.*",
+        "**/*.config.*.*",
+        "**/.*rc.{js,mjs,cjs,ts}"
+      ],
       "rules": {
         "no-console": "off",
         "import/no-default-export": "off",
@@ -158,7 +194,9 @@
       }
     },
     {
-      "files": ["**/*.{js,mjs,cjs}"],
+      "files": [
+        "**/*.{js,mjs,cjs}"
+      ],
       "rules": {
         "typescript/no-require-imports": "off"
       }

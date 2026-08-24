@@ -3,15 +3,24 @@ import type { OxlintConfig } from 'oxlint'
 import type { Rules } from '../types.ts'
 
 export interface ReactOptions {
+  /**
+   * Enable jsx-a11y accessibility rules.
+   * @default false
+   */
+  a11y?: boolean
   overrides?: Rules
 }
 
 export function react(options: ReactOptions = {}): Partial<OxlintConfig> {
-  const { overrides = {} } = options
+  const { a11y = false, overrides = {} } = options
 
   return {
-    plugins: ['react', 'react-perf', 'jsx-a11y'],
+    plugins: a11y ? ['react', 'jsx-a11y'] : ['react'],
     rules: {
+      // automatic JSX runtime — React import not required
+      'react/react-in-jsx-scope': 'off',
+      // real signal, but flags deliberate lazy-ref patterns — surface without failing
+      'react/refs': 'warn',
       'react/rules-of-hooks': 'error',
       'react/exhaustive-deps': 'warn',
       'react/jsx-boolean-value': ['error', 'never'],

@@ -51,7 +51,14 @@ export function saiful(options: OptionsConfig = {}, ...userConfigs: Partial<Oxli
     )
   }
 
-  if (enableReact) configs.push(react({ overrides: getOverrides(options, 'react') }))
+  if (enableReact) {
+    configs.push(
+      react({
+        a11y: resolveSubOptions(options, 'react').a11y,
+        overrides: getOverrides(options, 'react'),
+      }),
+    )
+  }
 
   if (enableVue) configs.push(vue({ overrides: getOverrides(options, 'vue') }))
 
@@ -65,6 +72,7 @@ export function saiful(options: OptionsConfig = {}, ...userConfigs: Partial<Oxli
     configs.push(
       antiSlop({
         overrides: getOverrides(options, 'antiSlop'),
+        severity: resolveSubOptions(options, 'antiSlop').severity,
         specifier: resolveSubOptions(options, 'antiSlop').specifier,
       }),
     )

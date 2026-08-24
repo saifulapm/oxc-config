@@ -27,6 +27,11 @@ export function javascript(options: JavascriptOptions = {}): Partial<OxlintConfi
       reportUnusedDisableDirectives: 'warn',
     },
     rules: {
+      // category-enabled rules that are too noisy in practice
+      'no-await-in-loop': 'off',
+      'no-underscore-dangle': 'off',
+      'unicorn/no-array-sort': 'off',
+      'jsdoc/require-yields': 'off',
       eqeqeq: ['error', 'smart'],
       'no-alert': 'error',
       'no-console': ['error', { allow: ['warn', 'error'] }],
