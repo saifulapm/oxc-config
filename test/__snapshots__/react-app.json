@@ -267,7 +267,8 @@
         "no-unused-vars": "off",
         "import/no-duplicates": "off",
         "typescript/no-explicit-any": "off",
-        "typescript/no-useless-empty-export": "off"
+        "typescript/no-useless-empty-export": "off",
+        "unicorn/require-module-specifiers": "off"
       }
     },
     {
@@ -334,6 +335,7 @@
       "rules": {
         "no-console": "off",
         "import/no-default-export": "off",
+        "import/no-named-as-default": "off",
         "typescript/explicit-function-return-type": "off"
       }
     },

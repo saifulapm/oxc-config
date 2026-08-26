@@ -1,6 +1,6 @@
 {
   "name": "@saifulapm/oxc-config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Saiful's shareable Oxlint + Oxfmt config — antfu-style factory with bundled anti-slop rules",
   "keywords": [
     "anti-slop",

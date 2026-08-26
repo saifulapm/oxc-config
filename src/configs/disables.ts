@@ -17,6 +17,9 @@ export function disables(): Partial<OxlintConfig> {
         rules: {
           'no-console': 'off',
           'import/no-default-export': 'off',
+          // the documented `import saiful from '@saifulapm/oxc-config'` collides
+          // with the named `saiful` export — noise, not a mixed-up import
+          'import/no-named-as-default': 'off',
           'typescript/explicit-function-return-type': 'off',
         },
       },

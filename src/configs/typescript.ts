@@ -63,6 +63,7 @@ export function typescript(options: TypescriptOptions = {}): Partial<OxlintConfi
           'typescript/no-explicit-any': 'off',
           // `export {}` is what makes a declaration file a module — never "useless"
           'typescript/no-useless-empty-export': 'off',
+          'unicorn/require-module-specifiers': 'off',
         },
       },
     ],
